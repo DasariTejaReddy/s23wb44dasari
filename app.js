@@ -8,9 +8,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var dogsRouter = require('./routes/Dogs');
 var boardRouter = require('./routes/board');
-//var selectorRouter = require('./routes/selector');
+var selectorRouter = require('./routes/selector');
 
-//var app = express();
+var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

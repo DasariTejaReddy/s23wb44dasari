@@ -1,19 +1,23 @@
 extends layout
 
-block content
-  h1= title
-  p Welcome back to #{title} modifed by Teja Reddy Dasari
 
-  - results = [{ Dogs_name: "Pug", Dogs_size: "small", Dogs_cost: 1000$ },{ Dogs_name: "labrador", Dogs_size: "medium", Dogs_cost: 1500$ },{ Dogs_name: "Poodle", Dogs_size: "large", Dogs_cost: 800$ }];
-  div.container-fluid 
-    -
-    div.row 
-    -
-    each item, index in results
-        div.col-sm-6
-            h2= item.Dogs_name, onclick='buy(index)'
-            p= item.Dogs_size
-            div.row
-                each prop, i in Object.keys(item)
-                    div(col-sm-2,  onclick=`buy(${index})`)
-                        p #{Object.keys(item)[i]}: #{item[prop]}    
+
+
+block content
+
+h1= title
+ - let myresults = [{Dogsname:"pug",Dogssize:"small",Dogscost:"10000$"},{Dogsname:"labrador",Dogssize:"medium",Dogscost:"1500$"},{Dogsname:"poodle",Dogssize:"large",Dogscost:"800$"}]
+
+div(class="container-fluid")
+
+div(class="row")
+
+each item,index in myresults
+
+div(class="col-sm-2", onClick=`buy(${index})`)
+
+p Name of the shoe is #{item.Dogsname}
+
+p shoe price is #{item.Dogssize}
+
+p shoe is made in #{item.Dogscost}    
