@@ -1,23 +1,13 @@
 extends layout
 
-
-
-
 block content
+  h1= title
+  - let myresults = [{Dogname:"Adidas",dogsize:"small",dogcost:"1000$"},{Dogname:"labrador",dogsize:"medium",dogcost:"800$"},{Dogname:"poodle",dogsize:"large",dogcost:"700$"}]
+  div(class="container-fluid")
+    div(class="row")
+      each item,index in myresults
+        div(class="col-sm-2", onClick=`buy(${index})`)
+          p Name of the dog is #{item.Dogname}
+          p dog size is  #{item.dogsize}
+          p dog price is #{item.dogcost}
 
-h1= title
- - let myresults = [{Dogsname:"pug",Dogssize:"small",Dogscost:"10000$"},{Dogsname:"labrador",Dogssize:"medium",Dogscost:"1500$"},{Dogsname:"poodle",Dogssize:"large",Dogscost:"800$"}]
-
-div(class="container-fluid")
-
-div(class="row")
-
-each item,index in myresults
-
-div(class="col-sm-2", onClick=`buy(${index})`)
-
-p Name of the shoe is #{item.Dogsname}
-
-p shoe price is #{item.Dogssize}
-
-p shoe is made in #{item.Dogscost}    
